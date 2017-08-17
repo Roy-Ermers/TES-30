@@ -1,0 +1,6 @@
+K:\projects\engine\TES30-API\bin\Debug\TES30-API.dll
+K:\projects\engine\TES30-API\bin\Debug\TES30-API.pdb
+K:\projects\engine\TES30-API\obj\Debug\TES30-API.dll
+K:\projects\engine\TES30-API\obj\Debug\TES30-API.pdb
+K:\projects\engine\TES30-API\bin\Debug\TES30-API.dll.config
+K:\projects\engine\TES30-API\obj\Debug\TES30-API.csprojResolveAssemblyReference.cache

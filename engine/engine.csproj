@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8FC48087-1AFF-4C1A-981F-82D2C76252C1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>TES30</RootNamespace>
+    <AssemblyName>TES-30</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>TES-30.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\BlockList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\BlockList.Designer.cs">
+      <DependentUpon>BlockList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CodeBlock.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CodeBlock.Designer.cs">
+      <DependentUpon>CodeBlock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CodePart.cs" />
+    <Compile Include="Controls\CodeTree.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CodeTree.Designer.cs">
+      <DependentUpon>CodeTree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Console.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Console.Designer.cs">
+      <DependentUpon>Console.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Game.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Game.Designer.cs">
+      <DependentUpon>Game.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\painter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\painter.Designer.cs">
+      <DependentUpon>painter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PropertyEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\PropertyEditor.Designer.cs">
+      <DependentUpon>PropertyEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PropertyItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\PropertyItem.Designer.cs">
+      <DependentUpon>PropertyItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SpritePainter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SpritePainter.Designer.cs">
+      <DependentUpon>SpritePainter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SpriteSelector.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\SpriteSelector.Designer.cs">
+      <DependentUpon>SpriteSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TES-Combobox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TES-Combobox.Designer.cs">
+      <DependentUpon>TES-Combobox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TES-TabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TES-TabControl.Designer.cs">
+      <DependentUpon>TES-TabControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TES_textbox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TES_textbox.Designer.cs">
+      <DependentUpon>TES_textbox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Window.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Window.Designer.cs">
+      <DependentUpon>Window.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptFile.cs" />
+    <Compile Include="splash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="splash.Designer.cs">
+      <DependentUpon>splash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sprite.cs" />
+    <Compile Include="ToggleButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ToggleButton.Designer.cs">
+      <DependentUpon>ToggleButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Controls\Scrollview.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Scrollview.Designer.cs">
+      <DependentUpon>Scrollview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TES-Button.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TES-Button.Designer.cs">
+      <DependentUpon>TES-Button.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TreeNode.cs" />
+    <Compile Include="WinApi.cs" />
+    <EmbeddedResource Include="Controls\BlockList.resx">
+      <DependentUpon>BlockList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CodeBlock.resx">
+      <DependentUpon>CodeBlock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CodeTree.resx">
+      <DependentUpon>CodeTree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SpritePainter.resx">
+      <DependentUpon>SpritePainter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SpriteSelector.resx">
+      <DependentUpon>SpriteSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TES_textbox.resx">
+      <DependentUpon>TES_textbox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Window.resx">
+      <DependentUpon>Window.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Controls\Scrollview.resx">
+      <DependentUpon>Scrollview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="splash.resx">
+      <DependentUpon>splash.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="TES-30.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TES30-API\TES30-API.csproj">
+      <Project>{b0c4f26c-a3ee-43ec-b45b-ddbe8f47f246}</Project>
+      <Name>TES30-API</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="banner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TES icon.ico" />
+    <Content Include="Icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
