@@ -56,7 +56,7 @@ namespace TES30
                 break;
                 //tree
                 case "TREE":
-                sender.Log(TreeNode<CodeBlock>.CreateMap(CodeTree.Instance.Tree));
+                sender.Log(TreeNode<API.CodePart>.CreateMap(CodeTree.Instance.Tree));
                 break;
                 //fullscreen
                 case "FULLSCREEN":

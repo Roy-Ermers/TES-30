@@ -30,7 +30,7 @@ namespace TES30
         public bool AllowChildren { get { return Part.IsRoutine; } }
         public bool IsRoutineBlock { get; set; } = false;
 
-        public TreeNode<CodeBlock> Node
+        public TreeNode<CodePart> Node
         {
             set
             {
@@ -38,7 +38,7 @@ namespace TES30
                 value.Disconnect += Node_Disconnect;
             }
         }
-        TreeNode<CodeBlock> node;
+        TreeNode<CodePart> node;
         public override string ToString()
         {
             return HeaderText;
@@ -64,7 +64,7 @@ namespace TES30
             base.OnMouseDown(e);
             if (e.Button== MouseButtons.Right)
             {
-                if (AllowChildren && CodeTree.Tree.FindChild(CodeTree.Tree, this).Parent == CodeTree.Tree)
+                if (AllowChildren && CodeTree.Tree.FindChild(CodeTree.Tree, Part).Parent == CodeTree.Tree)
                 {
                     ContextMenuStrip c = new ContextMenuStrip();
                     c.Items.Add("Add Block Underneath", null, AddBlock);
@@ -103,7 +103,7 @@ namespace TES30
             base.OnKeyDown(e);
             if (e.KeyCode == Keys.Delete && CanDelete)
             {
-                CodeTree.Tree.FindChild(CodeTree.Tree, this).Delete();
+                CodeTree.Tree.FindChild(CodeTree.Tree,Part).Delete();
                 this.Dispose();
             }
         }

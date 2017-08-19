@@ -14,7 +14,7 @@ namespace TES30
 {
     public partial class CodeTree : ContainerControl
     {
-        public TreeNode<CodeBlock> Tree;
+        public TreeNode<CodePart> Tree;
         CodeBlock LastCaller;
         bool LastRoutine;
 
@@ -31,7 +31,7 @@ namespace TES30
             };
             Controls.Add(startBlock);
             startBlock.Location = new Point(15, 15);
-            Tree = new TES30.TreeNode<CodeBlock>(startBlock);
+            Tree = new TES30.TreeNode<CodePart>(startBlock.Part);
             startBlock.Node = Tree;
         }
 
@@ -53,20 +53,20 @@ namespace TES30
             var Caller = LastCaller;
             CodeBlock Block = new CodeBlock()
             {
-                Part = part,
+                Part = part.CreateEmpty(),
                 CodeTree = this,
                 IsRoutineBlock = Caller.IsRoutineBlock
             };
             var p = Caller.Location;
             Block.Location = Caller.IsRoutineBlock ? new Point(p.X + Caller.Width + 15, p.Y) : new Point(p.X, p.Y + Caller.Height + 15);
-            TreeNode<CodeBlock> node;
-            if (Tree.value == Caller)
+            TreeNode<CodePart> node;
+            if (Tree.value == Caller.Part)
             {
-                node = Tree.AddChild(Block);
+                node = Tree.AddChild(Block.Part);
             }
             else
             {
-                node = Tree.FindChild(Tree, Caller).Parent.AddChild(Block);
+                node = Tree.FindChild(Tree, Caller.Part).Parent.AddChild(Block.Part);
             }
             Block.Node = node;
             Controls.Add(Block);
@@ -78,13 +78,13 @@ namespace TES30
             var Caller = LastCaller;
             CodeBlock Block = new CodeBlock()
             {
-                Part = part,
+                Part = part.CreateEmpty(),
                 CodeTree = this,
                 IsRoutineBlock = true
             };
             var p = Caller.Location;
             Block.Location = new Point(p.X + Caller.Width + 15, p.Y);
-            Block.Node = Tree.FindChild(Tree, Caller).AddChild(Block);
+            Block.Node = Tree.FindChild(Tree, Caller.Part).AddChild(Block.Part);
             Controls.Add(Block);
             Block.Invalidate();
             ActiveControl = Block;

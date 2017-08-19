@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TES30.API;
 
 namespace TES30.Controls
 {
@@ -40,6 +41,9 @@ namespace TES30.Controls
             {
                 playing = value;
                 Invalidate();
+                if (value == true)
+                    ticker.Start();
+                else ticker.Stop();
             }
         }
         System.Timers.Timer ticker = new System.Timers.Timer(0.0166666666666667d);
@@ -49,15 +53,24 @@ namespace TES30.Controls
             SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.AllPaintingInWmPaint, true);
             instance = this;
             ticker.Elapsed += Tick;
-            ticker.Start();
         }
         System.Diagnostics.Stopwatch timer = new System.Diagnostics.Stopwatch();
         private void Tick(object sender, System.Timers.ElapsedEventArgs e)
         {
             timer.Restart();
 
+            Queue<TreeNode<CodePart>> q = new Queue<TreeNode<CodePart>>();
+            q.Enqueue(Game.CodeTree);
+            while (q.Count > 0)
+            {
+                TreeNode<CodePart> current = q.Dequeue();
+                if (current == null)
+                    continue;
+                if(current.value.Execute())
+                foreach (TreeNode<CodePart> cp in current.Children)
+                    q.Enqueue(cp);
+            }
 
-            //System.Threading.Thread.Sleep(10);
 
             Invalidate();
             timer.Stop();
@@ -76,7 +89,7 @@ namespace TES30.Controls
             pevent.Graphics.DrawRectangle(Pens.White, ClientRectangle);
 
         }
-        int posX,posY = 0;
+        int posX, posY = 0;
         protected override void OnPaint(PaintEventArgs pe)
         {
             base.OnPaint(pe);
@@ -84,9 +97,6 @@ namespace TES30.Controls
             if (Playing)
             {
                 TextRenderer.DrawText(pe.Graphics, $"STIMULATING,\tFPS: {(60 / ticker.Interval).ToString("f0")},\tRATE: {ticker.Interval.ToString("f0")}ms", Font, new Point(0, 0), Color.White);
-                if (posX >= pe.ClipRectangle.Right) posX = 0;
-                if (posY >= pe.ClipRectangle.Bottom) posY = 0;
-                pe.Graphics.DrawArc(Pens.White, posX++, posY++, 25, 25, 0, 360);
             }
         }
     }

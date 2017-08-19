@@ -33,6 +33,7 @@
             // TES_textbox
             // 
             this.BackColor = System.Drawing.Color.Yellow;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ResumeLayout(false);
 
         }

@@ -12,7 +12,7 @@ using TES30.API;
 using System.Collections;
 using System.Runtime.Serialization.Formatters.Soap;
 using System.Runtime.Serialization;
-
+using TES30.Controls;
 namespace TES30
 {
     static class Program
@@ -85,7 +85,11 @@ namespace TES30
         private static Color[] palette;
         public static event EventHandler<Color[]> PaletteChanged;
         public static Sprite[] Sprites;
-        public static TreeNode<CodePart> CodeTree;
+        public static TreeNode<CodePart> CodeTree { get {
+                return TES30.CodeTree.Instance.Tree;               
+
+            }
+        }
 
         public static string Name = "TES30 Game";
         public static string Creator = "DefaultCompany";

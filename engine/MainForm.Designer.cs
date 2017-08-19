@@ -219,8 +219,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PropertyWindow.BackColor = System.Drawing.Color.Yellow;
-            this.PropertyWindow.Controls.Add(this.propertyEditor1);
             this.PropertyWindow.Controls.Add(this.teS_Button3);
+            this.PropertyWindow.Controls.Add(this.propertyEditor1);
             this.PropertyWindow.Controls.Add(this.DetailsDisplay);
             this.PropertyWindow.Controls.Add(this.DisplayName);
             this.PropertyWindow.Location = new System.Drawing.Point(50, 50);
@@ -241,10 +241,10 @@
             this.propertyEditor1.DisplayName = this.DisplayName;
             this.propertyEditor1.ForeColor = System.Drawing.Color.Black;
             this.propertyEditor1.LineHeight = 25;
-            this.propertyEditor1.Location = new System.Drawing.Point(270, 343);
-            this.propertyEditor1.Margin = new System.Windows.Forms.Padding(37, 15, 37, 15);
+            this.propertyEditor1.Location = new System.Drawing.Point(25, 64);
+            this.propertyEditor1.Margin = new System.Windows.Forms.Padding(62, 21, 62, 21);
             this.propertyEditor1.Name = "propertyEditor1";
-            this.propertyEditor1.Size = new System.Drawing.Size(4000, 1110);
+            this.propertyEditor1.Size = new System.Drawing.Size(943, 467);
             this.propertyEditor1.TabIndex = 3;
             this.propertyEditor1.Text = "propertyEditor1";
             // 
@@ -253,8 +253,8 @@
             this.DetailsDisplay.AutoSize = true;
             this.DetailsDisplay.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DetailsDisplay.ForeColor = System.Drawing.Color.DimGray;
-            this.DetailsDisplay.Location = new System.Drawing.Point(255, 240);
-            this.DetailsDisplay.Margin = new System.Windows.Forms.Padding(62, 0, 62, 0);
+            this.DetailsDisplay.Location = new System.Drawing.Point(22, 43);
+            this.DetailsDisplay.Margin = new System.Windows.Forms.Padding(103, 0, 103, 0);
             this.DetailsDisplay.Name = "DetailsDisplay";
             this.DetailsDisplay.Size = new System.Drawing.Size(287, 17);
             this.DetailsDisplay.TabIndex = 1;
@@ -265,8 +265,8 @@
             this.DisplayName.AutoSize = true;
             this.DisplayName.Font = new System.Drawing.Font("Courier New", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DisplayName.ForeColor = System.Drawing.Color.Black;
-            this.DisplayName.Location = new System.Drawing.Point(255, 111);
-            this.DisplayName.Margin = new System.Windows.Forms.Padding(62, 0, 62, 0);
+            this.DisplayName.Location = new System.Drawing.Point(22, 25);
+            this.DisplayName.Margin = new System.Windows.Forms.Padding(103, 0, 103, 0);
             this.DisplayName.Name = "DisplayName";
             this.DisplayName.Size = new System.Drawing.Size(108, 18);
             this.DisplayName.TabIndex = 0;
@@ -276,10 +276,10 @@
             // 
             this.teS_Button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.teS_Button3.ForeColor = System.Drawing.Color.Black;
-            this.teS_Button3.Location = new System.Drawing.Point(4117, 1484);
-            this.teS_Button3.Margin = new System.Windows.Forms.Padding(62, 21, 62, 21);
+            this.teS_Button3.Location = new System.Drawing.Point(853, 556);
+            this.teS_Button3.Margin = new System.Windows.Forms.Padding(103, 29, 103, 29);
             this.teS_Button3.Name = "teS_Button3";
-            this.teS_Button3.Size = new System.Drawing.Size(347, 66);
+            this.teS_Button3.Size = new System.Drawing.Size(115, 26);
             this.teS_Button3.TabIndex = 2;
             this.teS_Button3.Text = "Ok";
             this.teS_Button3.Click += new System.EventHandler(this.teS_Button3_Click);
@@ -400,7 +400,6 @@
             this.teS_textbox3.Name = "teS_textbox3";
             this.teS_textbox3.Size = new System.Drawing.Size(713, 29);
             this.teS_textbox3.TabIndex = 1;
-            this.teS_textbox3.Value = null;
             // 
             // label4
             // 
@@ -421,7 +420,6 @@
             this.teS_textbox4.Name = "teS_textbox4";
             this.teS_textbox4.Size = new System.Drawing.Size(713, 29);
             this.teS_textbox4.TabIndex = 3;
-            this.teS_textbox4.Value = null;
             // 
             // GameTab
             // 

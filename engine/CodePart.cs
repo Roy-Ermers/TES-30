@@ -72,6 +72,43 @@ namespace TES30
             return Value2.Equals(Value1);
         }
     }
+    public class ChangeBackgroundBlock : CodePart
+    {
+        public override string DisplayName
+        {
+            get
+            {
+                return "background color";
+            }
+        }
+
+        public override string Details
+        {
+            get
+            {
+                if (String.IsNullOrEmpty(ColorAdress))
+                    return "Changes the backgroundColor";
+                else
+                    return $"changes color to: {ColorAdress[0]}";
+
+            }
+        }
+
+        public string ColorAdress { get; set; }
+        public override bool IsRoutine
+        {
+            get
+            {
+                return false;
+            }
+        }
+
+        public override bool Execute()
+        {
+            TES30.API.Game.BackgroundColor = ColorAdress[0];
+            return true;
+        }
+    }
 
 
 }

@@ -9,6 +9,5 @@ namespace TES30.API
     public static class Game
     {
         public static char BackgroundColor { get; set; } = '0';
-
     }
 }
